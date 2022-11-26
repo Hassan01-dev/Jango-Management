@@ -5,6 +5,7 @@ ruby "2.7.0"
 
 # for user authentication
 gem "devise"
+gem 'devise_invitable', '~> 2.0.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"

@@ -16,6 +16,19 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       
       # Custom attibutes
       t.boolean :is_super_admin, null: false, default: false
+      t.string  :name,           null: false
+      t.string  :nickname
+      t.integer :designation, null: false, default: 0
+      t.date    :birthday
+
+      ## Invitable
+      t.string   :invitation_token
+      t.datetime :invitation_created_at
+      t.datetime :invitation_sent_at
+      t.datetime :invitation_accepted_at
+      t.integer  :invitation_limit
+      t.integer  :invited_by_id
+      t.string   :invited_by_type
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
@@ -41,6 +54,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
+    add_index :users, :invitation_token,     unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end

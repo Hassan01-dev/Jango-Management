@@ -22,9 +22,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_141239) do
     t.datetime "remember_created_at"
     t.boolean "is_super_admin", default: false, null: false
     t.string "name", null: false
-    t.string "nick_name", null: false
-    t.integer "designation", default: 0
-    t.date "birthday", null: false
+    t.string "nickname"
+    t.integer "designation", default: 0, null: false
+    t.date "birthday"
     t.string "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"

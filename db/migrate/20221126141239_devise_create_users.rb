@@ -16,10 +16,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       
       # Custom attibutes
       t.boolean :is_super_admin, null: false, default: false
-      t.string  :name,        null: false
-      t.string  :nick_name,   null: false
-      t.integer :designation, default: 0
-      t.date    :birthday,    null: false
+      t.string  :name,           null: false
+      t.string  :nickname
+      t.integer :designation, null: false, default: 0
+      t.date    :birthday
 
       ## Invitable
       t.string   :invitation_token

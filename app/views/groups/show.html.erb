@@ -1,0 +1,6 @@
+<p><%= @group.name %></p>
+<p><%= @group.description %></p>
+
+<%= link_to "View All Non-Members", non_member_index_group_path(@group) %>
+<br>
+<%= link_to "View All Members", member_index_group_path(@group) %>

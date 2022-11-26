@@ -1,0 +1,7 @@
+<p> All Non-member User </p>
+<% @non_member_users.each do |user| %>
+  <span><%= user.email %></span>
+  <%# Must update this to patch request type %>
+  <%= link_to "Add", add_member_group_path(@group, user) %>
+  <br>
+<% end %>

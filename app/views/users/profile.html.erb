@@ -1,0 +1,11 @@
+<p>As Member</p>
+<% @user.groups_as_member.each do |group| %>
+  <span><%= group.name %></span> : <%= link_to "View Group", group_path(group) %>
+  <br>
+<% end %>
+
+<p>As Admin</p>
+<% @user.groups_as_admin.each do |group| %>
+  <span><%= group.name %></span> : <%= link_to "View Group", group_path(group) %>
+  <br>
+<% end %>

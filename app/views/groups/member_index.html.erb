@@ -1,0 +1,7 @@
+<%= link_to "All Non-Member Users", non_member_index_group_path(@group) %>
+
+<p> All Members </p>
+<% @group.users.each do |user| %>
+  <span><%= user.email %></span> : <span><%= @group.is_admin?(user.id) ? "Admin" : "Member" %></span>
+  <br>
+<% end %>
